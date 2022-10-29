@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/dan.js"></script>
+        <link rel="stylesheet" href="css/exWebpageMain.css">
+    </head>
+    <body></body>
+    <script>
+        var app = new Delement('body', 'app', '', null);
+        var elm = app.addChild(new Delement('div', 'topNav', 'topNav', null));
+        for(var i = 0; i < 5; i++){
+            elm.addChild(new Delement('div', 'topNavItem' + i, 'topNavItem', null));
+        }
+        app.getID('topNavItem0').obj.onclick = function(e){
+            console.log(app.getID('topNavItem0').obj);
+        };
+        app.getID('topNavItem1').obj.onclick = function(e){
+            console.log(app.getID('topNavItem1').obj);
+        };
+        app.getID('topNavItem2').obj.onclick = function(e){
+            console.log(app.getID('topNavItem2').obj);
+        };
+        app.getID('topNavItem3').obj.onclick = function(e){
+            console.log(app.getID('topNavItem3').obj);
+        };
+        app.getID('topNavItem4').obj.onclick = function(e){
+            console.log(app.getID('topNavItem4').obj);
+        };
+        console.log(app.getID('topNavItem1'));
+
+        //Display the content
+        app.load();
+    </script>
+</html>

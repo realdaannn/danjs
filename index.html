@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="dan.js"></script>
+    </head>
+    <body>
+        <script>
+            var app = new Delement('body','app','',null);
+            var telm = app.addChild(new Delement('div', 'testarea 1', '', null));
+            var telm2 = telm.addChild(new Delement('div','test','',null));
+            telm2.addChild(new Delement('p','testp','',"test"));
+            telm2 = app.addChild(new Delement('button', 'button0', '', 'Unload'));
+            telm2.obj.onclick = function (e){
+                console.log("unloading");
+                app.getID('test').unload();
+                console.log(app);
+            }
+            telm.onLoad = function(){
+                app.getID('testp').obj.innerText = 'tested...';
+            }
+            telm2 = app.addChild(new Delement('button', 'button1', '', 'Load'));
+            telm2.obj.onclick = function (e){
+                console.log('loading');
+                app.getID('test').load();
+            }
+            elm = app.addChild(new Delement('div', 'testarea 2', null, null));
+            telm = app.addChild(new Delement('button', 'button 2', '', 'Add Child'));
+            telm.obj.onclick = function(){
+                app.getID('testarea 2').addChild(new Delement('p', 'testcontent', '', 'test content'));
+                console.log(app.getID('testarea 2'));
+            }
+            telm = app.addChild(new Delement('button', 'button 2', '', 'Remove Child'));
+            telm.obj.onclick = function(){
+                app.getID('testarea 2').removeChild(app.getID('testarea 2').child);
+            }
+            app.load();
+
+            var t = app;
+            while(t !== null){
+                t = t.getNext();
+                console.log(t);
+            }
+            console.log(app.getID('app'));
+            console.log(app.getID('button1'));
+        </script>
+    </body>
+</html>
+
+
