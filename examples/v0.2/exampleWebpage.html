@@ -6,7 +6,9 @@
     </head>
     <body></body>
     <script>
+        //Create main app tag
         var app = new Delement('body', 'app', '', null);
+        //Create the top nav bar
         var elm = app.addChild(new Delement('div', 'topNav', 'topNav', null));
         for(var i = 0; i < 5; i++){
             elm.addChild(new Delement('div', 'topNavItem' + i, 'topNavItem', null));
@@ -26,7 +28,12 @@
         app.getID('topNavItem4').obj.onclick = function(e){
             console.log(app.getID('topNavItem4').obj);
         };
-        console.log(app.getID('topNavItem1'));
+        //Create the side nav bar
+        elm = app.addChild(new Delement('div', 'sideNav', 'sideNav', null));
+        var telm = elm.addChild(new Delement('div', 'sideNavItem', 'sideNavItem', null));
+        telm.obj.onclick = function(e){
+            
+        }
 
         //Display the content
         app.load();

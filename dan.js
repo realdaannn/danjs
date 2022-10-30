@@ -189,6 +189,7 @@ class Delement{
                 t = t.getNext();
             }
         }
+        return null;
     }
     //Return the next element to be checked.
     getNext(){
