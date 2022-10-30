@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/dan.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body></body>
+    <script>
+        function CreateInputView(){
+            var elm = new Delement('div', 'inputView', 'inputView', null);
+            elm.addChild(new Delement('input', 'inputViewInput', 'inputViewInput', null));
+            var telm = elm.addChild(new Delement('button', 'inputViewAdd', 'inputViewAdd', 'Add'));
+            telm.obj.onclick = function (e){
+                var input = app.getID('inputViewInput');
+                console.log(input.obj.value);
+                if(input.obj.value){
+                    var output = app.getID('outputView').addChild(CreateOutputItemView(input.obj.value));
+                    output.load();
+                }
+                input.obj.value = '';
+            }
+            return elm;
+        }
+        function CreateOutputView(){
+            var elm = new Delement('div', 'outputView', 'outputView', null);
+            return elm;
+        }
+        function CreateOutputItemView(id){
+            var elm = new Delement('div', 'outputItem' + id, 'outputItem notDone', null);
+            elm.addChild(new Delement('h3', 'outputItemName' + id, 'outputItemName', id));
+            var telm = elm.addChild(new Delement('p', 'outputItemDelete' + id, 'outputItemDelete', 'X'));
+            telm.obj.onclick = function (e){
+                console.log(app.getID(e.target.id));
+                console.log(app.getID(e.target.id).parent.parent);
+                var parent = app.getID(e.target.id).parent;
+                parent.parent.removeChild(parent);
+            }
+            telm = elm.addChild(new Delement('p', 'outputItemCheck' + id, 'outputItemCheck', '✓'));
+            telm.obj.onclick = function (e){
+                console.log('changing classes');
+                var parent = app.getID(e.target.id);
+                console.log(danHasClass(parent.parent.obj, 'Done'))
+                if(!danHasClass(parent.parent.obj, 'Done')){
+                    danRemoveClass(parent.parent.obj, "notDone");
+                    danAddClass(parent.parent.obj, 'Done');
+                }
+                else{
+                    danRemoveClass(parent.parent.obj, "Done");
+                    danAddClass(parent.parent.obj, 'notDone');
+                }
+                //parent.parent.unload();
+                //parent.parent.load();
+            }
+
+            return elm;
+        }
+        function CreateApp(){
+            var elm = new Delement('div', 'app', 'app', null);
+            elm.addChild(CreateInputView());
+            elm.addChild(CreateOutputView());
+            return elm;
+        }
+        var app = CreateApp();
+        app.attach();
+        app.load();
+    </script>
+</html>

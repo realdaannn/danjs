@@ -1,0 +1,33 @@
+.outputView{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.outputItem{
+    height:20%;
+    min-height: 20%;
+    width: 30%;
+    min-width: 30%;
+
+    margin: 1%;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.outputItemDelete{
+    color: red;
+}
+
+
+
+.notDone{
+    background-color: rgb(32, 105, 231);
+}
+
+.Done{
+    background-color: rgb(81, 187, 39);
+}

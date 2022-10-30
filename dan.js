@@ -25,10 +25,12 @@ function danUnloadElement(elm){
         elm.removeChild(elm.lastChild);
     }
 }
+//Add classes to element
 function danAddClass(elm, classes){
     if(elm && classes)
     elm.classList = elm.classList + " " + classes;
 }
+//Remove classes from element
 function danRemoveClass(elm, classes){
     if(elm && classes){
         var rclasses = classes.split(" ");
@@ -37,6 +39,24 @@ function danRemoveClass(elm, classes){
         }
     }
 }
+function danHasClass(elm, classes){
+    if(elm){
+        console.log(elm.classList);
+        var goodVal = false;
+        elm.classList.forEach(
+            function (value, key, listObj) {
+                console.log(String(value));
+                console.log(classes)
+                if(String(value) == classes){
+                    console.log('classes match')
+                    goodVal = true;
+                }
+            }
+        );
+        return goodVal;
+    }
+}
+
 //VDOM object
 class Delement{
     //Create Delement with tag name, id, classes, text.
@@ -139,6 +159,14 @@ class Delement{
                     tt.sibling = t.sibling;
                 }
             }
+        }
+    }
+    //Remove all children of this element.
+    removeChildren(){
+        var t  = this.child;
+        while(t){
+            this.removeChild(t);
+            t  = this.child;
         }
     }
     //Add sibling, will share the same parent.

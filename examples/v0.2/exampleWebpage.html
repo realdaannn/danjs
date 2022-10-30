@@ -6,6 +6,23 @@
     </head>
     <body></body>
     <script>
+        //View Creation Functions
+        function CreateTestView1(){
+            var head = new Delement('div', 'subContent', 'subContent', null);
+            head.addChild(new Delement('div', 'content', 'content width50 height15', null));
+            head.addChild(new Delement('div', 'content', 'content width90 height20', null));
+            head.addChild(new Delement('div', 'content', 'content width80 height20', null));
+            head.addChild(new Delement('div', 'content', 'content width70 height20', null));
+            head.addChild(new Delement('div', 'content', 'content width90 height20', null));
+            head.addChild(new Delement('div', 'content', 'content width90 height20', null));
+            
+            return head;
+        }
+        function CreateTestView2(){
+            var head = new Delement('div', 'subContent', 'subContent', null);
+
+            return head;
+        }
         //Create main app tag
         var app = new Delement('body', 'app', '', null);
         //Create the top nav bar
@@ -32,8 +49,19 @@
         elm = app.addChild(new Delement('div', 'sideNav', 'sideNav', null));
         var telm = elm.addChild(new Delement('div', 'sideNavItem', 'sideNavItem', null));
         telm.obj.onclick = function(e){
-            
+            var t = app.getID('mainContent');
+            if(t)  t.removeChildren();
+            t.addChild(CreateTestView1());
         }
+        telm = elm.addChild(new Delement('div', 'sideNavItem', 'sideNavItem', null));
+        telm.obj.onclick = function(e){
+            var t = app.getID('mainContent');
+            if(t)  t.removeChildren();
+            //t.addChild(CreateTestView2());
+        }
+        //Create Main Content Area
+        elm = app.addChild(new Delement('div', 'mainContent', 'mainContent', null));
+        
 
         //Display the content
         app.load();
