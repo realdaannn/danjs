@@ -41,18 +41,18 @@ Once the Delement object has been created you can change any normal html attribu
 <ul>
   <li><h6>Delement</h6>
   <ul>
-    <li><p>constructor(tagname, id, classes, text)</p> <p>Create a Delement, creates a tag for the DOM, sets the id, classes and inner text.  The DOM element is stored directly in the 'obj' variable, any function that can be done with a document.get... can be used directly on the .obj var.  A DOM element is created but not rendered yet.</p></li>
+    <li><p>constructor(tagname, id, classes, text)</p> <p>Create a Delement, creates a tag for the DOM, sets the id, classes and inner text.  All input parameters are strings.  The DOM element is stored directly in the 'obj' variable, any function that can be done with a document.get... can be used directly on the .obj var.  A DOM element is created but not rendered yet.</p></li>
     <li><p>load()</p> <p>load will start rendering a Delement and it's children.  The isLoaded flag will be set and block loading the same element more than once.  This function contains the lifecycle hook onLoad(), which will be called directly after the element is loaded.</p></li>
     <li><p>unload()</p> <p>unload will remove the Delement and it's children from the DOM, they will still exist in the VDOM.  The primary purpose of this function is to stop rendering a component while keeping it's structure in the DOM, which is useful for switching contents of an app.</p></li>
     <li><p>attach()</p> Adds the Delement to be the child of the body tag of the html document<p></p></li>
     <li><p>addChild(elm)</p> <p>Adds the input Delement to be the child of this Delement.  Children will be loaded and unloaded at the same time as the parent.</p></li>
-    <li><p>removeChild(elm)</p> <p></p></li>
-    <li><p>removeChildren()</p> <p></p></li>
-    <li><p>addSibling(elm)</p> <p></p></li>
-    <li><p>removeSibling(elm)</p> <p></p></li>
-    <li><p>getID(elm)</p> <p></p></li>
-    <li><p>getNext()</p> <p></p></li>
-    <li><p>peekNext()</p> <p></p></li>
+    <li><p>removeChild(elm)</p> <p>Remove the input element if it's a child of this Delement. Input type is Delement</p></li>
+    <li><p>removeChildren()</p> <p>Removes all children of this Delement.</p></li>
+    <li><p>addSibling(elm)</p> <p>Add a sibling to this Delement, input type is Delement.</p></li>
+    <li><p>removeSibling(elm)</p> <p>Remoce Delement if it's a sibling of this Delement.</p></li>
+    <li><p>getID(elm)</p> <p>Get a child with the input id, input type is string.</p></li>
+    <li><p>getNext()</p> <p>Used to iterate through the hierarchy using a branch first search.</p></li>
+    <li><p>peekNext()</p> <p>Used for iterating. Returns the Delement after this Delement's children would be iterated over.</p></li>
   </ul>
   
   </li>
