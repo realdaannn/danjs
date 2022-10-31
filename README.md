@@ -30,9 +30,20 @@ Once the VDOM has been created it must be rendered using the load member functio
 Once the Delement object has been created you can change any normal html attribute using the Delement.obj variable which holds the DOM object of that VDOM object.  Using this variable you can change things like the onclick function, css classes (using danAddClass or like functions), or any variable/function of the underlying element that will be displayed or that is being displayed.
 
 <h4>Library</h4>
-<h6>Function</h6>
+<h6>Functions</h6>
 <ul>
-  <li><p>danHasClass(elm, class)</p><p> danHasClass checks whether or not the DOM element has a specific css class.  Input types elm-DomElement, class-string.  You can only check one class at a time, this function works on the DOM not the VDOM.</p></li>
+  <li><p>danHasClass(elm, classes)</p><p> danHasClass checks whether or not the DOM element has a specific css class.  Input types elm-DomElement, class-string.  You can only check one class at a time, this function works on the DOM not the VDOM.</p></li>
   <li><p> danAddClass(elm, classes)</p><p> danAddClass adds the classes to the DOM element's classes.  Input types elm-DomElement, classes-string.  Can add more than one class at the same time, this function works on the DOM not the VDOM.</p></li>
   <li><p> danRemoveClass(elm, classes)</p><p> danRemoveClass removes the classes from the DOM element's classes. Input types elm-DomElement, classes-string.  Can remove more than one class at the same time, this function works on the DOM not the VDOM.</p></li>
+</ul>
+
+<h6>Classes</h6>
+<ul>
+  <li><h6>Delement</h6>
+  <ul>
+    <li><p>constructor(tagname, id, classes, text)</p> <p>Create a Delement, creates a tag for the DOM, sets the id, classes and inner text.  The DOM element is stored directly in the 'obj' variable, any function that can be done with a document.get... can be used directly on the .obj var.  A DOM element is created but not rendered yet.</p></li>
+    <li><p></p> <p></li>
+  </ul>
+  
+  </li>
 </ul>
