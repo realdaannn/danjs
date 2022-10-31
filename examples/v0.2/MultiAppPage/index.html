@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/dan.js"></script>
+        <link rel="stylesheet" href="css/MultiAppPage.css">
+    </head>
+    <body>
+        <script>
+            var app = new Delement('body', 'app', '', null);
+            var elm = app.addChild(new Delement('div', 'timezoneGMT', '', null));
+            //elm.onLoad = function (){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function (){
+                    console.log(xhttp);
+                    if(xhttp.status === 200 && xhttp.readyState === 4){
+                        eval(xhttp.response);
+                    }
+                    //app.getID('timezone1').obj.innerHTML = xhttp.response;
+                }
+                xhttp.open("GET", 'GMT.html', true);
+                xhttp.send();
+            //}
+            elm = app.addChild(new Delement('div', 'timezone2', '', null));
+            elm = app.addChild(new Delement('div', 'timezone3', '', null));
+
+            /*
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function (){
+                    console.log(xhttp);
+                    if(xhttp.status === 200 && xhttp.readyState === 4){
+                        eval(xhttp.response);
+                    }
+                    //app.getID('timezone1').obj.innerHTML = xhttp.response;
+                }
+                xhttp.open("GET", 'GMT.html', true);
+                xhttp.send();
+            */
+            app.load();
+        </script>
+    </body>
+</html>

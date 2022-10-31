@@ -2,10 +2,11 @@
 <html>
     <head>
         <script src="../js/dan.js"></script>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/ShoppingList.css">
     </head>
     <body></body>
     <script>
+        //Function to create top input and add button
         function CreateInputView(){
             var elm = new Delement('div', 'inputView', 'inputView', null);
             elm.addChild(new Delement('input', 'inputViewInput', 'inputViewInput', null));
@@ -21,10 +22,12 @@
             }
             return elm;
         }
+        //Function creates blank div for outputting whats added
         function CreateOutputView(){
             var elm = new Delement('div', 'outputView', 'outputView', null);
             return elm;
         }
+        //Function to create an individual list item segment and its content
         function CreateOutputItemView(id){
             var elm = new Delement('div', 'outputItem' + id, 'outputItem notDone', null);
             elm.addChild(new Delement('h3', 'outputItemName' + id, 'outputItemName', id));
@@ -48,20 +51,22 @@
                     danRemoveClass(parent.parent.obj, "Done");
                     danAddClass(parent.parent.obj, 'notDone');
                 }
-                //parent.parent.unload();
-                //parent.parent.load();
             }
 
             return elm;
         }
+        //Create and add the app components
         function CreateApp(){
             var elm = new Delement('div', 'app', 'app', null);
             elm.addChild(CreateInputView());
             elm.addChild(CreateOutputView());
             return elm;
         }
+
         var app = CreateApp();
+        //Insert the app into the dom as child of body
         app.attach();
+        //Load the app
         app.load();
     </script>
 </html>

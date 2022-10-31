@@ -1,0 +1,7 @@
+console.log('HELLO WORLD!');
+console.log(app.getID('timezoneGMT'));
+var GMTappParent = app.getID('timezoneGMT');
+GMTappParent.removeChildren();
+var telm = GMTappParent.addChild(new Delement('div', 'timeGMTdiv', '', null));
+telm.addChild(new Delement('p', 'timeGMTlabel', '', 'GMT:'));
+telm.addChild(new Delement('p', 'timeGMT', '', new Date().toLocaleString('en-us', {timezone: 'Etc/GMT'})));

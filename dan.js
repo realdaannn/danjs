@@ -39,6 +39,7 @@ function danRemoveClass(elm, classes){
         }
     }
 }
+//Check whether or not a class is present in an element
 function danHasClass(elm, classes){
     if(elm){
         console.log(elm.classList);
