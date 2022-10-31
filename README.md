@@ -14,6 +14,11 @@ There are two ways of setting up a danjs app.  One way is to use the attach() fu
 <h6>App Creation</h6>
 If the body is created as a Delement it makes it harder to embed the app like a singleton app, if you want to embed or have more than one danjs app running on a page it is advised that you create your app under a div instead.  You can use asynchronous javascript calls to a webpage and extract just the app root (in the examples 'app') and display them in corresponding locations.
 
+Each element is created using the Delement constructor.  Elements can be added as either a child or sibling to an existing element using the addChild or addSibling functions. Each creation function returns the element that was just added, making programmatic addition of elements in the hierarchy easier. 
+Check the helloWorld html files for a quick example on how to create elements.
+
+VDOM elements can be added procedurally or functionally.  The examples/v0.2/ShoppingList is an example of a functional setup of an app.  index.html is an example of precedural setup.
+
 <h6>Loading/Unloading</h6>
 Once the VDOM has been created it must be rendered using the load member function.  Once the app is loaded to stop rendering a component, call unload.  Load and unloading has no effect on the VDOM other than setting the isLoaded flag. A component can only be loaded once.  To alter the VDOM add or remove children or siblings using their respecitve functions, these calls will alter the VDOM and the DOM.
 
