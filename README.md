@@ -20,7 +20,7 @@ Each element is created using the Delement constructor.  Elements can be added a
 Check the helloWorld html files for a quick example on how to create elements.
 </p>
 <p>
-VDOM elements can be added procedurally or functionally.  The examples/v0.2/ShoppingList is an example of a functional setup of an app.  index.html is an example of precedural setup.
+VDOM elements can be added procedurally or functionally.  The examples/v0.2/ShoppingList is an example of a functional setup of an app.  index.html is an example of procedural setup.
 </p>
 <h6>Loading/Unloading</h6>
 Once the VDOM has been created it must be rendered using the load member function.  Once the app is loaded to stop rendering a component, call unload.  Load and unloading has no effect on the VDOM other than setting the isLoaded flag. A component can only be loaded once.  To alter the VDOM add or remove children or siblings using their respecitve functions, these calls will alter the VDOM and the DOM.
