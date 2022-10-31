@@ -29,3 +29,8 @@ Once the VDOM has been created it must be rendered using the load member functio
 <h6>HTML Object</h6>
 Once the Delement object has been created you can change any normal html attribute using the Delement.obj variable which holds the DOM object of that VDOM object.  Using this variable you can change things like the onclick function, css classes (using danAddClass or like functions), or any variable/function of the underlying element that will be displayed or that is being displayed.
 
+<h4>Library</h4>
+<h6>Function</h6>
+<ul>
+  <li><p>danHasClass(elm, class)</p><p> - checks whether or not the DOM element has a specific css class.  Input types elm-DomElement, class-string.  You can only check one class at a time.</p></li>
+</ul>
