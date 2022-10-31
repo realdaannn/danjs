@@ -46,7 +46,13 @@ Once the Delement object has been created you can change any normal html attribu
     <li><p>unload()</p> <p>unload will remove the Delement and it's children from the DOM, they will still exist in the VDOM.  The primary purpose of this function is to stop rendering a component while keeping it's structure in the DOM, which is useful for switching contents of an app.</p></li>
     <li><p>attach()</p> Adds the Delement to be the child of the body tag of the html document<p></p></li>
     <li><p>addChild(elm)</p> <p>Adds the input Delement to be the child of this Delement.  Children will be loaded and unloaded at the same time as the parent.</p></li>
-    <li><p></p> <p></p></li>
+    <li><p>removeChild(elm)</p> <p></p></li>
+    <li><p>removeChildren()</p> <p></p></li>
+    <li><p>addSibling(elm)</p> <p></p></li>
+    <li><p>removeSibling(elm)</p> <p></p></li>
+    <li><p>getID(elm)</p> <p></p></li>
+    <li><p>getNext()</p> <p></p></li>
+    <li><p>peekNext()</p> <p></p></li>
   </ul>
   
   </li>
