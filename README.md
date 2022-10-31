@@ -32,5 +32,9 @@ Once the Delement object has been created you can change any normal html attribu
 <h4>Library</h4>
 <h6>Function</h6>
 <ul>
-  <li><p>danHasClass(elm, class)</p><p> - checks whether or not the DOM element has a specific css class.  Input types elm-DomElement, class-string.  You can only check one class at a time.</p></li>
+  <li><p>danHasClass(elm, class)</p><p> danHasClass checks whether or not the DOM element has a specific css class.  Input types elm-DomElement, class-string.  You can only check one class at a time, this function works on the DOM not the VDOM.</p></li>
+  <li><p> danAddClass(elm, classes)</p><p> danAddClass adds the classes to the DOM element's classes.  Input types elm-DomElement, classes-string.  Can add more than one class at the same time.</p></li>
+  <li><p> ()</p><p> </p></li>
+  <li><p> ()</p><p> </p></li>
+  <li><p> ()</p><p> </p></li>
 </ul>
